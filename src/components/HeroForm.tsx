@@ -50,6 +50,7 @@ const HeroForm: React.FC<HeroFormProps> = ({ onSubmit }) => {
       setName("");
       setSuperpower("");
       setHumilityScore("");
+      toast.success("Superhero Created Successfully!");
     } catch (error) {
       if (axios.isAxiosError(error)) {
         let errorMessage =
@@ -58,7 +59,7 @@ const HeroForm: React.FC<HeroFormProps> = ({ onSubmit }) => {
         if (message) {
           errorMessage = message;
         }
-        
+
         toast.error(errorMessage);
       } else {
         toast.error("Error adding hero. Please try again!");

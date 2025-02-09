@@ -11,7 +11,7 @@ const App: React.FC = () => {
 
   return (
     <div className="app">
-      <h1>Superheroes List</h1>
+      <h1>Humble Superheroes List</h1>
 
       <button onClick={() => setIsFormVisible(!isFormVisible)}>
         {isFormVisible ? "Cancel" : "Add Hero"}
@@ -23,7 +23,11 @@ const App: React.FC = () => {
 
       <HeroList heroes={heroes} setHeroes={setHeroes} />
 
-      <ToastContainer />
+      <ToastContainer
+        closeButton={<span style={{ fontSize: "14px", color: "#333" }}>✖</span>}
+        autoClose={3000}
+        closeOnClick={true}
+      />
     </div>
   );
 };
